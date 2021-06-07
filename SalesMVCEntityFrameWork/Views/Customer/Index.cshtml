@@ -1,0 +1,98 @@
+﻿@model PagedList.IPagedList<SalesLibrary.Customer>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Customer</h1>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        @using (Html.BeginForm("Index", "Customer", FormMethod.Get))
+        {
+            <input type="text" name="search" />
+            <button type="submit" class="btn-info">Search</button>
+        }
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            CustomerName
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.CustomerId">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerId }) |
+                                @Ajax.ActionLink("Delete", "Delete", new { id = item.CustomerId },
+                               new AjaxOptions
+                                    {
+                                        Confirm = "Do you want delete it !",
+                                        OnComplete = "$('#row_" + @item.CustomerId + "').remove()",
+                                        HttpMethod = "Delete"
+                                    })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model,Page => Url.Action("Index",new { Page }))
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // fubction delete row in table record
+    $(document).ready(function () {
+        $("#Delete").on("click", function () {
+        var parent = $(this).parent().parent();
+            var myId = item.CustomerId;
+        $.ajax({
+            type: "post",
+            url: "@Url.Action("Delete","Customer")",
+            data: {id:  myId },
+            ajaxasync: true,
+            success: function () {
+                alert("success");
+            },
+            error: function (data) {
+                alert(data.x);
+            }
+        });
+    });
+});
+
+</script>

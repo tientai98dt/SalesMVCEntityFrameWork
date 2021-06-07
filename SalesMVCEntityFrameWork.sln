@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesMVCEntityFrameWork", "SalesMVCEntityFrameWork\SalesMVCEntityFrameWork.csproj", "{A0DA9FE1-EF30-4A88-BF4B-2D50E382CDFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesLibrary", "SalesLibrary\SalesLibrary.csproj", "{DC610CD7-8E1E-4650-B560-2DAA98578969}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0DA9FE1-EF30-4A88-BF4B-2D50E382CDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DA9FE1-EF30-4A88-BF4B-2D50E382CDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DA9FE1-EF30-4A88-BF4B-2D50E382CDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DA9FE1-EF30-4A88-BF4B-2D50E382CDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC610CD7-8E1E-4650-B560-2DAA98578969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC610CD7-8E1E-4650-B560-2DAA98578969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC610CD7-8E1E-4650-B560-2DAA98578969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC610CD7-8E1E-4650-B560-2DAA98578969}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7AB2F2D-BD9A-42C2-A7E4-656599AAD7E3}
+	EndGlobalSection
+EndGlobal
